@@ -56,15 +56,12 @@ public class Main {
 		Node<Integer> nodeD = new Node<>(3, nodeC);
 		Node<Integer> nodeE = new Node<>(2, nodeD);  // L2
 		    
-		System.out.println("exe 11: " + node1);
-		//System.out.println(removeCommon2(node1,nodeE));
-    System.out.println(" ");
-    	
-    System.out.println("exe 12: ");
+	
+    		System.out.println("exe 1: ");
 		System.out.println(mergeLists(node1,nodeE));
-    System.out.println(" ");
-	}
+    		System.out.println(" ");
+		}
 
-}
+	}
 
 }
