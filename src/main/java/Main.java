@@ -37,7 +37,58 @@ public class Main {
 		return L3.getNext();	
 	}
 	
+public static Node<Integer> ex2(Node<Integer> list){
+	Node<Integer> dummy = new Node <Integer>(-1,list);
+	Node<Integer> head = new Node<Integer> (-1);
+	Node<Integer> p = dummy;
+	Node<Integer> h = head;
+		
+	while (dummy.hasNext()) {
+		p = dummy;
+		Node <Integer> m = dummy;
+		int min = p.getNext().getValue();
+
+	while (p.hasNext()) {
+		if (p.getNext().getValue() < min) {
+			m = p;
+			min = p.getNext().getValue();
+		}
+	p = p.getNext();
+	}
+
+	h.setNext(m.getNext());
+	h = h.getNext();
+	m.setNext(m.getNext().getNext());
+	}
+	return head.getNext();
+}
 	
+
+public static Node<Integer> ex2b(Node<Integer> list){
+	Node<Integer> dummy = new Node<Integer> (-1,list);
+	Node<Integer> p = dummy; // current
+	Node<Integer> last = dummy;
+
+	while(last.hasNext()) {
+	p = last;
+	Node<Integer> m = dummy;
+	int min = p.getNext().getValue();
+
+	while (p.hasNext()) {
+	if (p.getNext().getValue()<min) {
+	m = p;
+	min = p.getNext().getValue();
+	}
+	p = p.getNext();
+	}
+
+	last.setNext(m.getNext());
+	last = last.getNext();
+	last.setNext(m);
+	m.setNext(m.getNext().getNext());
+	}
+	return dummy.getNext();
+}
 	
 	
 
